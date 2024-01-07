@@ -24,7 +24,6 @@ const valorantService = {
 
     getWeapons: async function() {
         try {
-            console.log(`${api_url}?api_key=${api_token}`)
             const response = await fetch(`${api_url}?api_key=${api_token}`);
             const data = await response.json();
             return data.equips;

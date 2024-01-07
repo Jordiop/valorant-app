@@ -13,7 +13,7 @@
       <div v-else>
         <div v-if = "isLoaded" class="flex flex-wrap w-full p-2">
           <div v-for="weapon in weapons" :key="weapon.id">
-            <div class="p-2 border rounded-lg w-28 h-28">
+            <div class="flex flex-col h-32 p-2 bg-gray-400 border rounded-lg w-28">
               <span class="flex items-center justify-center mb-2 text-xs font-bold">{{ weapon.name }}</span>
               <img :src="returnFoto(weapon.id)">
             </div>
@@ -41,7 +41,7 @@ export default {
   methods: {
     ...mapActions(useValorantStore, ['getAgents', 'getMaps', 'getWeapons']),
     returnFoto(id) {
-      return '/src/assets/weapons/'+ id + '.png' ?? "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Valorant_logo_-_pink_color_version.svg/2560px-Valorant_logo_-_pink_color_version.svg.png"
+      return '/src/assets/weapons/'+ id + '.png' ?? 'https://via.placeholder.com/150'
     }
   },
   mounted() {
