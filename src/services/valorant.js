@@ -1,10 +1,10 @@
-const BASE_URL = 'https://eu.api.riotgames.com/val/content/v1/contents';
-const api_token = "";
+const api_url = import.meta.env.VITE_API_URL;
+const api_token = import.meta.env.VITE_API_TOKEN;
 
 const valorantService = {
     getAgents: async function() {
         try {
-            const response = await fetch(`${BASE_URL}?api_key=${api_token}`);
+            const response = await fetch(`${api_url}?api_key=${api_token}`);
             const data = await response.json();
             return data.data;
         } catch (error) {
@@ -14,7 +14,7 @@ const valorantService = {
 
     getMaps: async function() {
         try {
-            const response = await fetch(`${BASE_URL}?api_key=${api_token}`);
+            const response = await fetch(`${api_url}?api_key=${api_token}`);
             const data = await response.json();
             return data.data;
         } catch (error) {
@@ -24,7 +24,8 @@ const valorantService = {
 
     getWeapons: async function() {
         try {
-            const response = await fetch(`${BASE_URL}?api_key=${api_token}`);
+            console.log(`${api_url}?api_key=${api_token}`)
+            const response = await fetch(`${api_url}?api_key=${api_token}`);
             const data = await response.json();
             return data.equips;
         } catch (error) {
