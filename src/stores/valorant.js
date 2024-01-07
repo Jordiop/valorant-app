@@ -11,10 +11,28 @@ export const useValorantStore = defineStore('valorantStore', {
     }),
     actions: {
         async getAgents() {
-            this.agents = await valorantService.getAgents()
+            try {
+                this.isLoading = true
+                this.agents = await valorantService.getAgents()
+            } catch (e) {
+                console.log('error', e)
+                this.isLoaded = true
+            } finally {
+                this.isLoading = false
+                this.isLoaded = true
+            }
         },
         async getMaps() {
-            this.maps = await valorantService.getMaps()
+            try {
+                this.isLoading = true
+                this.maps = await valorantService.getMaps()
+            } catch (e) {
+                console.log('error', e)
+                this.isLoaded = true
+            } finally {
+                this.isLoading = false
+                this.isLoaded = true
+            }
         },
         async getWeapons() {
             try {

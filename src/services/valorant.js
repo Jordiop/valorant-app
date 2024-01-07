@@ -6,7 +6,7 @@ const valorantService = {
         try {
             const response = await fetch(`${api_url}?api_key=${api_token}`);
             const data = await response.json();
-            return data.data;
+            return data.characters;
         } catch (error) {
             console.error('Error fetching agents:', error);
         }
@@ -16,7 +16,7 @@ const valorantService = {
         try {
             const response = await fetch(`${api_url}?api_key=${api_token}`);
             const data = await response.json();
-            return data.data;
+            return data.maps;
         } catch (error) {
             console.error('Error fetching maps:', error);
         }

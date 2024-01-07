@@ -27,6 +27,12 @@
                     </li>
                     <li class="nav-item">
                         <a class="flex items-center px-3 py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75">
+                            <i class="text-lg text-white opacity-75 fab fa-twitter leading-lg" />
+                            <RouterLink to="/agents">Agents</RouterLink>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="flex items-center px-3 py-2 text-xs font-bold leading-snug text-white uppercase hover:opacity-75">
                             <i class="text-lg text-white opacity-75 fab fa-pinterest leading-lg" />
                             <RouterLink to="/about">About</RouterLink>
                         </a>
