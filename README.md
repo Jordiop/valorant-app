@@ -22,6 +22,12 @@ npm install
 npm run dev
 ```
 
+### Add .env variables
+```sh
+cp .env.example .env
+```
+And set the api-key
+
 ### Compile and Minify for Production
 
 ```sh

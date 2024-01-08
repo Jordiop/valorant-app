@@ -1,26 +1,20 @@
 <template>
     <div class="">
-       <!--  <div v-for="agent in agents" :key="agent.id" >
-            <div class="flex flex-col items-center justify-center w-20 h-20 p-2 border border-black rounded-lg">
-                <span class="text-xs font-bold">{{ agent.name }}</span>
-                <img class="w-12 h-12" :src="returnFoto(agent.id)">
-            </div>
-        </div> -->
         <swiper
-        :effect="'coverflow'"
-        :grabCursor="true"
-        :centeredSlides="true"
-        :slidesPerView="'3'"
-        :coverflowEffect="{
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
-        }"
-        :pagination="true"
-        :modules="modules"
-        class="mySwiper"
+            :effect="'coverflow'"
+            :grabCursor="true"
+            :centeredSlides="true"
+            :slidesPerView="'5'"
+            :coverflowEffect="{
+                rotate: 0,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: false,
+            }"
+            :pagination="true"
+            :modules="modules"
+            class="mySwiper"
             @swiper="onSwiper"
             @slideChange="onSlideChange"
         >
@@ -30,7 +24,7 @@
                     <img class="" :src="returnFoto(agent.id)">
                 </div>
             </swiper-slide>
-            <div class="swiper-pagination" slot="pagination"></div>
+            <div class="swiper-pagination"></div>
         </swiper>
     </div>
 </template>
